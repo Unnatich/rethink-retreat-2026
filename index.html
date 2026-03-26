@@ -1280,6 +1280,8 @@ section{padding:4rem 1.5rem}
   // Keyboard
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
+      if (phase >= 4) return; // Envelope done — don't intercept typing
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
       e.preventDefault();
       if (phase === 0) crackSeal();
       else if (phase >= 2) {
