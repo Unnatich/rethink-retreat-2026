@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rethink Grad Retreat 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f0f0f;
+  --cream:#faf8f4;
+  --warm:#f5f0e8;
+  --moss:#1e3a2f;
+  --moss-mid:#2d4a3e;
+  --moss-light:#3d6b58;
+  --moss-pale:#e8f0ec;
+  --terra:#c4704b;
+  --gold:#c9a84c;
+  --gold-light:#dbb960;
+  --mist:#8a9a8e;
+  --stone:#6b6b6b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;position:relative;background:linear-gradient(170deg,#162b20 0%,#0e1f14 40%,#0a1a0f 100%);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 20% 30%,rgba(30,58,47,.6),transparent),radial-gradient(ellipse 500px 500px at 80% 70%,rgba(196,112,75,.12),transparent),radial-gradient(ellipse 300px 300px at 50% 50%,rgba(201,168,76,.06),transparent);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.2rem;border:1px solid rgba(201,168,76,.25);border-radius:100px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem;position:relative;z-index:1;animation:fadeDown 1s ease both}
+.hero-badge .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s ease infinite}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,7rem);font-weight:700;color:var(--cream);line-height:1.05;position:relative;z-index:1;animation:fadeUp 1s .2s ease both}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:600}
+.hero-sub{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2.5vw,1.5rem);color:rgba(250,248,244,.55);margin-top:1.5rem;font-weight:400;font-style:italic;position:relative;z-index:1;animation:fadeUp 1s .4s ease both}
+.hero-details{display:flex;gap:2.5rem;margin-top:3rem;position:relative;z-index:1;animation:fadeUp 1s .6s ease both;flex-wrap:wrap;justify-content:center}
+.hero-detail{text-align:center}
+.hero-detail .label{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mist);margin-bottom:.3rem}
+.hero-detail .value{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--cream);font-weight:600}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:1;animation:fadeUp 1s 1s ease both}
+.hero-scroll span{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(250,248,244,.25);margin-bottom:.5rem}
+.hero-scroll .line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(201,168,76,.5),transparent);margin:0 auto;animation:scrollLine 2s ease infinite}
+
+/* ===== SHARED ===== */
+section{padding:6rem 2rem}
+.container{max-width:800px;margin:0 auto}
+.container-wide{max-width:1000px;margin:0 auto}
+.section-number{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.2em;color:var(--moss-light);text-transform:uppercase;margin-bottom:.8rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem;color:var(--ink)}
+.section-title em{font-style:italic;color:var(--moss-mid)}
+.prose{font-size:1.05rem;line-height:1.8;color:#3a3a3a}
+.prose+.prose{margin-top:1.2rem}
+
+/* ===== IMAGE PLACEHOLDERS ===== */
+.img-placeholder{border:2px dashed rgba(0,0,0,.12);border-radius:16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;background:rgba(0,0,0,.02);overflow:hidden;position:relative;transition:border-color .3s ease}
+.img-placeholder:hover{border-color:rgba(45,74,62,.3)}
+.img-placeholder.has-img{border:none;background:none}
+.img-placeholder.has-img img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.img-placeholder .ph-label{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.12em;color:var(--mist);text-transform:uppercase}
+.img-placeholder .ph-desc{font-size:.78rem;color:var(--stone);max-width:260px;text-align:center;line-height:1.4}
+.img-hero-banner{width:100%;height:320px;margin-top:2.5rem}
+.img-inline{width:100%;height:280px;margin:2rem 0}
+.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+.img-grid .img-placeholder{height:220px}
+.dark-ph{border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.03)}
+.dark-ph:hover{border-color:rgba(201,168,76,.3)}
+.dark-ph .ph-label{color:var(--gold)}
+.dark-ph .ph-desc{color:rgba(250,248,244,.45)}
+
+/* ===== OPENING ===== */
+.opening{background:var(--cream)}
+.opening-lead{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.5vw,1.7rem);line-height:1.6;color:var(--ink);font-weight:400;border-left:3px solid var(--moss-mid);padding-left:1.5rem;margin-bottom:2rem}
+
+/* ===== SHRAVAN FEATURE ===== */
+.shravan-feature{background:var(--moss);color:var(--cream);position:relative;overflow:hidden}
+.shravan-feature::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 500px at 50% 30%,rgba(61,107,88,.4),transparent),radial-gradient(ellipse 400px 300px at 80% 80%,rgba(201,168,76,.06),transparent);pointer-events:none}
+.shravan-feature .section-number{color:var(--gold)}
+.shravan-feature .section-title{color:var(--cream)}
+.shravan-feature .section-title em{color:var(--gold)}
+.shravan-feature .prose{color:rgba(250,248,244,.8)}
+
+/* ===== QUOTE BLOCK ===== */
+.quote-block{font-family:'Playfair Display',serif;font-size:clamp(1.25rem,2.5vw,1.7rem);line-height:1.6;font-style:italic;text-align:center;max-width:650px;margin:2.5rem auto 0;position:relative;padding:0 1rem}
+.quote-block::before{content:'\201C';font-size:5rem;position:absolute;top:-2.5rem;left:-.5rem;opacity:.2;font-family:'Playfair Display',serif;line-height:1}
+.quote-moss{color:var(--moss-mid)}
+.quote-moss::before{color:var(--moss-mid)}
+.quote-gold{color:var(--gold-light);opacity:.9}
+.quote-gold::before{color:var(--gold)}
+
+/* ===== WAYANAD ===== */
+.wayanad{background:var(--moss-mid);color:var(--cream);position:relative;overflow:hidden}
+.wayanad::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 400px 300px at 90% 20%,rgba(61,107,88,.3),transparent),radial-gradient(ellipse 500px 400px at 10% 80%,rgba(0,0,0,.15),transparent);pointer-events:none}
+.wayanad .section-number{color:var(--gold)}
+.wayanad .section-title{color:var(--cream)}
+.wayanad .section-title em{color:var(--gold)}
+.wayanad .prose{color:rgba(250,248,244,.8)}
+.wayanad-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.2rem;margin-top:2rem;position:relative;z-index:1}
+.wayanad-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.3rem;text-align:center;transition:transform .3s ease,background .3s ease}
+.wayanad-stat:hover{transform:translateY(-3px);background:rgba(255,255,255,.08)}
+.wayanad-stat .num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--gold)}
+.wayanad-stat .desc{font-size:.82rem;color:rgba(250,248,244,.55);margin-top:.3rem}
+
+/* ===== TANK ===== */
+.tank{background:var(--warm)}
+.tank-card{background:white;border-radius:20px;padding:2.5rem;margin-top:2rem;border:1px solid rgba(0,0,0,.04);position:relative;overflow:hidden}
+.tank-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--moss-mid),var(--moss-light),var(--gold))}
+.tank-rules{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:.5rem}
+.tank-rule{text-align:center;padding:1rem .5rem;transition:transform .3s ease}
+.tank-rule:hover{transform:translateY(-3px)}
+.tank-rule-icon{width:48px;height:48px;border-radius:12px;background:var(--moss-pale);display:flex;align-items:center;justify-content:center;margin:0 auto .8rem;transition:background .3s ease}
+.tank-rule:hover .tank-rule-icon{background:var(--moss-mid)}
+.tank-rule-icon svg{width:22px;height:22px;stroke:var(--moss-mid);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s ease}
+.tank-rule:hover .tank-rule-icon svg{stroke:var(--cream)}
+.tank-rule h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:.3rem;color:var(--ink)}
+.tank-rule p{font-size:.82rem;color:var(--stone);line-height:1.5}
+
+/* ===== ITINERARY ===== */
+.itinerary{background:var(--cream)}
+.timeline{margin-top:2.5rem;position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--moss),var(--moss-light),var(--gold));border-radius:2px}
+.timeline-day{margin-bottom:2.5rem;position:relative}
+.timeline-day::before{content:'';position:absolute;left:-2rem;top:8px;width:14px;height:14px;border-radius:50%;background:var(--moss);border:3px solid var(--cream);z-index:1;transition:transform .3s ease}
+.timeline-day:hover::before{transform:scale(1.3)}
+.timeline-day:nth-child(2)::before{background:var(--moss-mid)}
+.timeline-day:nth-child(3)::before{background:var(--moss-light)}
+.timeline-day:nth-child(4)::before{background:var(--gold)}
+.timeline-day h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.timeline-day .day-date{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--moss-light);margin-bottom:.8rem}
+.timeline-events{display:flex;flex-direction:column;gap:.6rem}
+.timeline-event{display:flex;gap:1rem;align-items:baseline;font-size:.95rem;line-height:1.6;color:#3a3a3a}
+.timeline-event .time{font-family:'JetBrains Mono',monospace;font-size:.73rem;color:var(--mist);min-width:70px;flex-shrink:0}
+.timeline-event .highlight{color:var(--moss-mid);font-weight:600}
+
+/* ===== MID CTA ===== */
+.mid-cta{background:var(--moss);text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.mid-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 500px 300px at 50% 50%,rgba(61,107,88,.3),transparent);pointer-events:none}
+.mid-cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--cream);position:relative;z-index:1;line-height:1.3}
+.mid-cta h2 em{font-style:italic;color:var(--gold)}
+.mid-cta p{font-size:.92rem;color:rgba(250,248,244,.55);margin-top:.8rem;position:relative;z-index:1}
+.btn-primary{display:inline-block;padding:.9rem 2.5rem;background:var(--gold);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.04em;text-decoration:none;border-radius:100px;position:relative;z-index:1;transition:all .35s cubic-bezier(.4,0,.2,1);cursor:pointer;border:none;overflow:hidden}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.25)}
+.btn-primary:active{transform:translateY(0);box-shadow:0 4px 15px rgba(201,168,76,.2)}
+.btn-secondary{display:inline-block;padding:.8rem 2rem;background:transparent;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.04em;text-decoration:none;border-radius:100px;border:1px solid rgba(250,248,244,.2);transition:all .35s cubic-bezier(.4,0,.2,1);cursor:pointer}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-1px)}
+
+/* ===== PRICING ===== */
+.pricing{background:var(--ink);color:var(--cream);position:relative;overflow:hidden}
+.pricing::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 30% 50%,rgba(30,58,47,.4),transparent),radial-gradient(ellipse 400px 300px at 80% 30%,rgba(61,107,88,.15),transparent);pointer-events:none}
+.pricing .section-number{color:var(--gold)}
+.pricing .section-title{color:var(--cream)}
+.pricing .section-title em{color:var(--gold)}
+.pricing .prose{color:rgba(250,248,244,.75)}
+.price-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:2.5rem;margin-top:2.5rem;text-align:center;position:relative;z-index:1;transition:border-color .3s ease}
+.price-box:hover{border-color:rgba(201,168,76,.2)}
+.price-box .amount{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:800;color:var(--gold)}
+.price-box .gst{font-size:.88rem;color:rgba(250,248,244,.45);margin-top:.3rem}
+.price-box .tagline{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:rgba(250,248,244,.65);margin-top:1rem}
+.price-includes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem;margin-top:2rem;text-align:left}
+.price-include{display:flex;align-items:center;gap:.6rem;font-size:.88rem;color:rgba(250,248,244,.65);transition:color .2s ease}
+.price-include:hover{color:rgba(250,248,244,.9)}
+.price-include .check{color:var(--moss-light);font-weight:700;flex-shrink:0}
+.breakdown{margin-top:3rem;position:relative;z-index:1}
+.breakdown h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--cream);margin-bottom:1rem;text-align:center}
+.breakdown-note{text-align:center;font-size:.85rem;color:rgba(250,248,244,.4);font-style:italic;margin-bottom:1.5rem}
+.breakdown-items{max-width:550px;margin:0 auto}
+.breakdown-item{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.9rem;transition:background .2s ease}
+.breakdown-item .b-label{color:rgba(250,248,244,.65)}
+.breakdown-item .b-value{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--moss-light)}
+.breakdown-item.total{border-bottom:none;border-top:1px solid rgba(61,107,88,.4);margin-top:.5rem;padding-top:1rem}
+.breakdown-item.total .b-label{color:var(--cream);font-weight:600}
+.breakdown-item.total .b-value{font-size:.92rem;font-weight:700;color:var(--gold)}
+.breakdown-footer{text-align:center;margin-top:1.5rem;font-size:.83rem;color:rgba(250,248,244,.4);line-height:1.7}
+.payment-flex{margin-top:2.5rem;text-align:center;padding:1.2rem 1.5rem;border:1px solid rgba(61,107,88,.3);border-radius:12px;position:relative;z-index:1;background:rgba(61,107,88,.08);transition:border-color .3s ease}
+.payment-flex:hover{border-color:rgba(61,107,88,.5)}
+.payment-flex p{font-size:.88rem;color:rgba(250,248,244,.55);line-height:1.6}
+
+/* ===== OUTSTATION ===== */
+.outstation{background:var(--warm)}
+.outstation-card{background:white;border-radius:16px;padding:2.5rem;border-left:4px solid var(--moss-mid);border-top:1px solid rgba(0,0,0,.04);border-right:1px solid rgba(0,0,0,.04);border-bottom:1px solid rgba(0,0,0,.04);margin-top:1.5rem;transition:box-shadow .3s ease}
+.outstation-card:hover{box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.outstation-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:1rem;color:var(--moss-mid)}
+.outstation-card p{font-size:.95rem;line-height:1.75;color:#3a3a3a}
+.outstation-card p+p{margin-top:.8rem}
+
+/* ===== PERKS ===== */
+.perks{background:var(--cream)}
+.perks-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem}
+.perk-card{background:white;border-radius:16px;padding:2rem;border:1px solid rgba(0,0,0,.04);transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s ease;position:relative;overflow:hidden}
+.perk-card:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(0,0,0,.07)}
+.perk-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--moss-mid),var(--moss-light));opacity:0;transition:opacity .3s ease}
+.perk-card:hover::before{opacity:1}
+.perk-icon{width:44px;height:44px;background:var(--moss-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;transition:background .3s ease}
+.perk-card:hover .perk-icon{background:var(--moss-mid)}
+.perk-icon svg{width:20px;height:20px;stroke:var(--moss-mid);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s ease}
+.perk-card:hover .perk-icon svg{stroke:var(--cream)}
+.perk-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:var(--ink)}
+.perk-card p{font-size:.9rem;line-height:1.65;color:var(--stone)}
+
+/* ===== SPECIAL OPPORTUNITY SECTIONS ===== */
+.opportunity{position:relative;overflow:hidden}
+.opportunity-inner{max-width:900px;margin:0 auto}
+
+.opp-accelerator{background:linear-gradient(160deg,var(--moss) 0%,#162b20 100%);color:var(--cream)}
+.opp-accelerator::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 500px 400px at 80% 20%,rgba(61,107,88,.35),transparent),radial-gradient(ellipse 400px 300px at 10% 80%,rgba(201,168,76,.06),transparent);pointer-events:none}
+.opp-accelerator::after{content:'';position:absolute;top:-50%;right:-20%;width:500px;height:500px;border:1px solid rgba(255,255,255,.03);border-radius:50%;pointer-events:none}
+
+.opp-roles{background:linear-gradient(160deg,#0f1f14 0%,var(--moss) 100%);color:var(--cream)}
+.opp-roles::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 500px 400px at 20% 80%,rgba(61,107,88,.3),transparent),radial-gradient(ellipse 400px 300px at 90% 20%,rgba(201,168,76,.06),transparent);pointer-events:none}
+.opp-roles::after{content:'';position:absolute;bottom:-30%;left:-15%;width:400px;height:400px;border:1px solid rgba(255,255,255,.03);border-radius:50%;pointer-events:none}
+
+.opp-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem 1rem;border:1px solid rgba(201,168,76,.25);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;position:relative;z-index:1}
+.opp-badge .opp-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;animation:pulse 2.5s ease infinite}
+
+.opp-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--cream);line-height:1.15;margin-bottom:1.5rem;position:relative;z-index:1}
+.opp-title em{font-style:italic;color:var(--gold)}
+
+.opp-prose{font-size:1.05rem;line-height:1.8;color:rgba(250,248,244,.78);position:relative;z-index:1}
+.opp-prose+.opp-prose{margin-top:1.2rem}
+.opp-prose strong{color:var(--cream)}
+
+.opp-points{margin-top:2rem;display:flex;flex-direction:column;gap:1rem;position:relative;z-index:1}
+.opp-point{display:flex;gap:1rem;align-items:flex-start;padding:1.2rem 1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:14px;transition:all .35s cubic-bezier(.4,0,.2,1)}
+.opp-point:hover{background:rgba(255,255,255,.07);border-color:rgba(61,107,88,.3);transform:translateX(6px)}
+.opp-point-icon{width:40px;height:40px;border-radius:10px;background:rgba(61,107,88,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .3s ease}
+.opp-point:hover .opp-point-icon{background:rgba(61,107,88,.5)}
+.opp-point-icon svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.opp-point h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--cream);margin-bottom:.3rem}
+.opp-point p{font-size:.88rem;line-height:1.6;color:rgba(250,248,244,.6)}
+
+.opp-quote{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2vw,1.4rem);font-style:italic;color:var(--gold);text-align:center;margin-top:2.5rem;padding:1.5rem;border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15);position:relative;z-index:1;opacity:.85}
+
+/* ===== PROOF ===== */
+.proof{background:var(--moss-mid);color:var(--cream);position:relative;overflow:hidden}
+.proof::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 500px 400px at 70% 40%,rgba(61,107,88,.3),transparent);pointer-events:none}
+.proof .section-number{color:var(--gold)}
+.proof .section-title{color:var(--cream)}
+.proof .section-title em{color:var(--gold)}
+.proof .prose{color:rgba(250,248,244,.8)}
+
+/* ===== SEATS ===== */
+.seats{background:var(--moss);color:var(--cream);text-align:center;position:relative;overflow:hidden}
+.seats::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 500px 400px at 50% 50%,rgba(61,107,88,.25),transparent);pointer-events:none}
+.seats .section-number{color:var(--gold)}
+.seats .section-title{color:var(--cream)}
+.seats .section-title em{color:var(--gold)}
+.seats-count{font-family:'Playfair Display',serif;font-size:clamp(5rem,12vw,9rem);font-weight:800;color:var(--gold);line-height:1;margin:1.5rem 0 .5rem;position:relative;z-index:1;text-shadow:0 0 80px rgba(201,168,76,.15)}
+.seats-sub{font-size:1.05rem;color:rgba(250,248,244,.65);margin-bottom:2rem;position:relative;z-index:1}
+
+/* ===== LOGISTICS ===== */
+.logistics{background:var(--warm)}
+.logistics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2rem}
+.logistic-item{background:white;border-radius:12px;padding:1.5rem;border:1px solid rgba(0,0,0,.04);transition:transform .3s ease,box-shadow .3s ease}
+.logistic-item:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.05)}
+.logistic-item h3{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;margin-bottom:.5rem;display:flex;align-items:center;gap:.6rem;color:var(--ink)}
+.logistic-item h3 .l-icon{width:28px;height:28px;background:var(--moss-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logistic-item h3 .l-icon svg{width:14px;height:14px;stroke:var(--moss-mid);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.logistic-item p{font-size:.88rem;line-height:1.65;color:var(--stone)}
+
+/* ===== GUIDELINES ===== */
+.guidelines{background:var(--cream);padding:4rem 2rem}
+.guideline-list{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-top:1.5rem}
+.guideline{padding:.9rem 1.2rem;background:var(--warm);border-radius:10px;font-size:.85rem;line-height:1.5;color:#3a3a3a;display:flex;align-items:baseline;gap:.6rem;transition:background .2s ease}
+.guideline:hover{background:var(--moss-pale)}
+.guideline .g-dot{width:5px;height:5px;border-radius:50%;background:var(--moss-mid);flex-shrink:0;margin-top:.45rem}
+
+/* ===== CTA ===== */
+.cta{background:var(--moss);color:var(--cream);text-align:center;padding:6rem 2rem;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 50% 50%,rgba(61,107,88,.3),transparent);pointer-events:none}
+.cta h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--cream);line-height:1.15;position:relative;z-index:1}
+.cta h2 em{font-style:italic;color:var(--gold)}
+.cta p{font-size:1rem;color:rgba(250,248,244,.55);margin-top:1.2rem;position:relative;z-index:1}
+.cta-share{margin-top:1.5rem;position:relative;z-index:1}
+.cta-share a{font-size:.82rem;color:rgba(250,248,244,.35);text-decoration:underline;text-underline-offset:3px;transition:color .2s ease}
+.cta-share a:hover{color:var(--gold)}
+
+/* ===== FOOTER ===== */
+.footer{padding:2rem;text-align:center;background:var(--ink);border-top:1px solid rgba(255,255,255,.04)}
+.footer p{font-size:.75rem;color:rgba(250,248,244,.25)}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes scrollLine{0%{opacity:1;transform:scaleY(1);transform-origin:top}50%{opacity:.3;transform:scaleY(.4);transform-origin:top}100%{opacity:1;transform:scaleY(1);transform-origin:top}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes fadeInBlur{from{opacity:0;filter:blur(8px);transform:translateY(20px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
+@keyframes drawLine{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes countPulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes glowPulse{0%,100%{text-shadow:0 0 40px rgba(201,168,76,.1)}50%{text-shadow:0 0 80px rgba(201,168,76,.25)}}
+
+/* Reveal base */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* Staggered children — cards, points, stats */
+.stagger-children .stagger-item{opacity:0;transform:translateY(30px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.stagger-children.visible .stagger-item{opacity:1;transform:translateY(0)}
+.stagger-children.visible .stagger-item:nth-child(1){transition-delay:.05s}
+.stagger-children.visible .stagger-item:nth-child(2){transition-delay:.15s}
+.stagger-children.visible .stagger-item:nth-child(3){transition-delay:.25s}
+.stagger-children.visible .stagger-item:nth-child(4){transition-delay:.35s}
+.stagger-children.visible .stagger-item:nth-child(5){transition-delay:.45s}
+.stagger-children.visible .stagger-item:nth-child(6){transition-delay:.55s}
+
+/* Slide in from sides */
+.reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(50px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+
+/* Scale in */
+.reveal-scale{opacity:0;transform:scale(.88);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* Blur fade */
+.reveal-blur{opacity:0;filter:blur(10px);transform:translateY(20px);transition:opacity .9s ease,filter .9s ease,transform .9s ease}
+.reveal-blur.visible{opacity:1;filter:blur(0);transform:translateY(0)}
+
+/* Counter animation for seats */
+.counter-animate{animation:countPulse 2s ease infinite;animation-play-state:paused}
+.counter-animate.visible{animation-play-state:running}
+
+/* Gold glow on seats number */
+.glow-animate{animation:glowPulse 3s ease infinite;animation-play-state:paused}
+.glow-animate.visible{animation-play-state:running}
+
+/* Floating animation for wayanad stats */
+.float-on-visible{animation:floatSlow 4s ease infinite;animation-play-state:paused}
+.float-on-visible.visible{animation-play-state:running}
+
+/* Quote line draw */
+.quote-line-draw{position:relative}
+.quote-line-draw::after{content:'';position:absolute;bottom:-.8rem;left:50%;transform:translateX(-50%) scaleX(0);width:60px;height:2px;background:var(--gold);transform-origin:center;transition:transform 1s cubic-bezier(.4,0,.2,1) .3s}
+.quote-line-draw.visible::after{transform:translateX(-50%) scaleX(1)}
+
+/* Shimmer on price amount */
+.price-shimmer.visible .amount{background:linear-gradient(90deg,var(--gold) 0%,var(--gold-light) 40%,#fff 50%,var(--gold-light) 60%,var(--gold) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease 1s 1}
+
+/* Opportunity points slide */
+.opp-points .opp-point{opacity:0;transform:translateX(-40px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.opp-points.visible .opp-point{opacity:1;transform:translateX(0)}
+.opp-points.visible .opp-point:nth-child(1){transition-delay:.1s}
+.opp-points.visible .opp-point:nth-child(2){transition-delay:.25s}
+.opp-points.visible .opp-point:nth-child(3){transition-delay:.4s}
+.opp-points.visible .opp-point:nth-child(4){transition-delay:.55s}
+
+/* Timeline day stagger */
+.timeline .timeline-day{opacity:0;transform:translateX(-30px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.timeline.visible .timeline-day:nth-child(1){opacity:1;transform:translateX(0);transition-delay:.1s}
+.timeline.visible .timeline-day:nth-child(2){opacity:1;transform:translateX(0);transition-delay:.3s}
+.timeline.visible .timeline-day:nth-child(3){opacity:1;transform:translateX(0);transition-delay:.5s}
+.timeline.visible .timeline-day:nth-child(4){opacity:1;transform:translateX(0);transition-delay:.7s}
+
+/* Progress line for timeline */
+.timeline::before{transform:scaleY(0);transform-origin:top;transition:transform 1.5s cubic-bezier(.4,0,.2,1) .2s}
+.timeline.visible::before{transform:scaleY(1)}
+
+/* Image grid stagger */
+.img-grid-animated .img-placeholder:nth-child(1){opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s ease}
+.img-grid-animated .img-placeholder:nth-child(2){opacity:0;transform:translateX(30px);transition:opacity .7s ease .15s,transform .7s ease .15s}
+.img-grid-animated.visible .img-placeholder{opacity:1;transform:translateX(0)}
+
+@media(max-width:600px){
+section{padding:4rem 1.5rem}
+.hero-details{gap:1.2rem}
+.price-includes{grid-template-columns:1fr}
+.tank-card{padding:1.5rem}
+.tank-rules{grid-template-columns:1fr}
+.timeline{padding-left:1.5rem}
+.timeline-event{flex-direction:column;gap:.2rem}
+.timeline-event .time{min-width:unset}
+.img-grid{grid-template-columns:1fr}
+.outstation-card{padding:1.5rem}
+.opp-point{flex-direction:column;gap:.6rem}
+.perks-grid{grid-template-columns:1fr}
+.logistics-grid{grid-template-columns:1fr}
+.guideline-list{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- HERO -->
+<!-- ============================================ -->
+<section class="hero">
+  <div class="hero-badge"><span class="dot"></span> Only 25 Seats</div>
+  <h1>The Rethink<br><em>Retreat</em></h1>
+  <p class="hero-sub">Three days that change everything.</p>
+  <div class="hero-details">
+    <div class="hero-detail"><div class="label">When</div><div class="value">May 1 &ndash; 3, 2025</div></div>
+    <div class="hero-detail"><div class="label">Where</div><div class="value">Wayanad, Kerala</div></div>
+    <div class="hero-detail"><div class="label">Duration</div><div class="value">3 Days, 2 Nights</div></div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="line"></div></div>
+</section>
+
+<!-- ============================================ -->
+<!-- OPENING -->
+<!-- ============================================ -->
+<section class="opening">
+  <div class="container reveal">
+    <p class="opening-lead">You just finished one of the most intense 9 weeks of your life. Product thinking, late-night sessions, tough feedback, and real builds. Roughly 30 hours a week. That is no small thing.<br><br>That deserves something more than a congratulations message on Slack.</p>
+    <p class="prose">The Rethink Grad Retreat is our way of saying: <strong>you earned this.</strong> Three days in the hills of Wayanad, with your cohort, with Shravan, and with the entire Rethink team. No deliverables. No deadlines. Just the people who grinded alongside you, in one of the most beautiful corners of India.</p>
+    <p class="prose">Whether the program exceeded your expectations or left you wanting more &mdash; the retreat is where things click differently. Some of the strongest relationships and biggest career moves from past cohorts did not come from the sessions. They came from showing up at the retreat. This is where it all comes together.</p>
+
+    <!-- IMAGE 1: Group photo from past retreat -->
+    <div class="img-placeholder img-hero-banner" id="img-1">
+      <span class="ph-label">Image 1</span>
+      <span class="ph-desc">Past retreat group photo or cohort energy moment</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 01 — SHRAVAN -->
+<!-- ============================================ -->
+<section class="shravan-feature">
+  <div class="container reveal">
+    <div class="section-number">01 &mdash; The Heart of This Retreat</div>
+    <h2 class="section-title">72 hours with <em>Shravan.</em><br>Not on a screen.</h2>
+    <p class="opp-prose">You already know what Shravan brings to a one-hour session. The clarity. The frameworks. The way he breaks down complex product thinking into something that just clicks. Now multiply that by three full days &mdash; except this time, there is no session format. No mute button. No chat box.</p>
+    <p class="opp-prose">This is Shravan around a campfire at 2 AM, talking about life, career, failures, and the things he does not say in a structured class. This is Shravan over breakfast, casually dropping insights about building products and building yourself. This is Shravan on a walk through a coffee plantation, just being present and available.</p>
+
+    <!-- IMAGE 2: Shravan candid -->
+    <div class="img-placeholder img-inline dark-ph" id="img-2">
+      <span class="ph-label">Image 2</span>
+      <span class="ph-desc">Shravan candid &mdash; talking to cohort, campfire, casual setting</span>
+    </div>
+
+    <p class="opp-prose">The online version of Shravan already changed how you think about product. <strong>The offline version changes how you think about your career and your life.</strong> Every single person who has attended a past retreat says the same thing &mdash; those conversations hit differently in person. Not because he says different things. But because when you are sitting next to someone, looking them in the eye, with no time limit and no agenda, the depth of the conversation goes to a place that screens simply cannot reach.</p>
+    <div class="quote-block quote-gold reveal-blur reveal quote-line-draw">This is not about attending another session. This is about spending three days with someone who genuinely cares about where you end up &mdash; and having the time and space to actually talk about it.</div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 02 — THE WHY -->
+<!-- ============================================ -->
+<section style="background:var(--warm)">
+  <div class="container reveal">
+    <div class="section-number">02 &mdash; The Why</div>
+    <h2 class="section-title">Why does this <em>retreat exist?</em></h2>
+    <p class="prose">You have spent 9 weeks getting to know your cohort through screens and async messages. You know how they think. You know their product instincts. But there is something that only happens when you sit together at a table, walk through a coffee plantation, or stay up late talking about everything and nothing.</p>
+    <p class="prose"><strong>You stop being someone they know from Rethink &mdash; and start being someone they remember for life.</strong></p>
+    <p class="prose">The people you meet at this retreat will become your mentors, your collaborators, and your closest professional friends. Not because of a networking session. But because you will have genuinely lived three days together.</p>
+    <div class="quote-block quote-moss reveal-blur reveal quote-line-draw">We all have school friends, college friends. But THIS cohort? Everyone here is chasing the same thing &mdash; becoming a great operator, a full-stack builder. And that is rare.</div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 03 — WAYANAD -->
+<!-- ============================================ -->
+<section class="wayanad">
+  <div class="container reveal">
+    <div class="section-number">03 &mdash; The Place</div>
+    <h2 class="section-title">Why <em>Wayanad?</em></h2>
+    <p class="prose" style="color:rgba(250,248,244,.8)">Sitting in the Western Ghats at around 900 metres above sea level. The air smells like coffee and spice. The nearest tourist crowd is far enough away that you will not even notice them. Peaceful, not crowded, and the kind of place where you genuinely switch off.</p>
+
+    <!-- IMAGE 3 & 4: Wayanad / resort -->
+    <div class="img-grid img-grid-animated reveal">
+      <div class="img-placeholder dark-ph" id="img-3">
+        <span class="ph-label">Image 3</span>
+        <span class="ph-desc">Wayanad landscape / greenery / hills</span>
+      </div>
+      <div class="img-placeholder dark-ph" id="img-4">
+        <span class="ph-label">Image 4</span>
+        <span class="ph-desc">Resort exterior / pool / valley view</span>
+      </div>
+    </div>
+
+    <p class="prose" style="color:rgba(250,248,244,.8)">A very special resort is waiting for us there. Lush greenery, well-furnished rooms, a pool with valley views, indoor and outdoor activity spaces, and enough room for all of us to have our own world for three days. We are keeping the details as a surprise &mdash; but trust us on this one.</p>
+    <div class="wayanad-stats stagger-children reveal">
+      <div class="wayanad-stat stagger-item"><div class="num">20&ndash;27&deg;C</div><div class="desc">Cool, breezy, comfortable</div></div>
+      <div class="wayanad-stat stagger-item"><div class="num">~5 hrs</div><div class="desc">From Bengaluru by bus</div></div>
+      <div class="wayanad-stat stagger-item"><div class="num">900m</div><div class="desc">Above sea level</div></div>
+      <div class="wayanad-stat stagger-item"><div class="num">3 Days</div><div class="desc">Fully covered stay</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 04 — RETHINK TANK -->
+<!-- ============================================ -->
+<section class="tank">
+  <div class="container reveal">
+    <div class="section-number">04 &mdash; The Main Event</div>
+    <h2 class="section-title">The Rethink <em>Tank</em></h2>
+    <p class="prose">This is the activity that past cohorts still cannot stop talking about. Think Shark Tank, but make it product. Think real-time competition, team energy, and the kind of adrenaline you do not get from a Zoom call.</p>
+    <p class="prose">Here is how it works: you will be grouped into teams on the spot, given a real problem to crack, and asked to build a pitch from scratch. No laptops. No phones. No AI. Just pen, paper, coloured markers, whiteboards, and whatever your brain and your team can come up with. Then you pitch it live to a panel.</p>
+    <p class="prose"><strong>Do not prepare anything for this beforehand.</strong> That is the whole point &mdash; you show up, you get surprised, and that is what makes it fun. The best part is the chaos of figuring it out together in real time. More details will be shared at the retreat itself. Just come ready to have a great time.</p>
+
+    <!-- IMAGE 5: Team activity / whiteboard -->
+    <div class="img-placeholder img-inline" id="img-5">
+      <span class="ph-label">Image 5</span>
+      <span class="ph-desc">Team activity / whiteboard brainstorm / past Rethink Tank energy</span>
+    </div>
+
+    <div class="tank-card reveal-scale reveal">
+      <div class="tank-rules stagger-children reveal">
+        <div class="tank-rule stagger-item">
+          <div class="tank-rule-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+          <h4>Real Problem</h4>
+          <p>A real-world challenge dropped on you at the retreat. No prep needed.</p>
+        </div>
+        <div class="tank-rule stagger-item">
+          <div class="tank-rule-icon"><svg viewBox="0 0 24 24"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></div>
+          <h4>Zero Screens</h4>
+          <p>No laptops, no phones, no AI. Pen, paper, markers. Pure creativity.</p>
+        </div>
+        <div class="tank-rule stagger-item">
+          <div class="tank-rule-icon"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+          <h4>Team Energy</h4>
+          <p>Grouped on the spot. The fun is in figuring it out together.</p>
+        </div>
+        <div class="tank-rule stagger-item">
+          <div class="tank-rule-icon"><svg viewBox="0 0 24 24"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg></div>
+          <h4>Live Pitch</h4>
+          <p>Present to the Rethink team and your cohort. Competitive, electric, unforgettable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 05 — ITINERARY -->
+<!-- ============================================ -->
+<section class="itinerary">
+  <div class="container reveal">
+    <div class="section-number">05 &mdash; The Itinerary</div>
+    <h2 class="section-title">How your <em>four days</em> look</h2>
+    <div class="timeline reveal">
+      <div class="timeline-day">
+        <h3>Night Zero &mdash; Assembly</h3>
+        <div class="day-date">April 30th</div>
+        <div class="timeline-events">
+          <div class="timeline-event"><span class="time">Midnight</span><span>Everyone assembles at Bengaluru Airport. Local folks picked up along the route.</span></div>
+          <div class="timeline-event"><span class="time">12:00 AM</span><span>Chartered bus departs. Sleep on the bus &mdash; the drive is comfortable, about 5 hours.</span></div>
+        </div>
+      </div>
+      <div class="timeline-day">
+        <h3>Day 1 &mdash; Arrival &amp; First Evening</h3>
+        <div class="day-date">May 1st</div>
+        <div class="timeline-events">
+          <div class="timeline-event"><span class="time">Morning</span><span>Arrive in Wayanad. Check in. First look at the resort. Breakfast.</span></div>
+          <div class="timeline-event"><span class="time">Afternoon</span><span>Lunch together. Rest, recharge, explore at your own pace.</span></div>
+          <div class="timeline-event"><span class="time">Evening</span><span>The retreat officially kicks off. <span class="highlight">First group activity.</span></span></div>
+          <div class="timeline-event"><span class="time">Night</span><span>Dinner, music, and the kind of conversations that only happen away from the city.</span></div>
+        </div>
+      </div>
+      <div class="timeline-day">
+        <h3>Day 2 &mdash; Explore + Rethink Tank</h3>
+        <div class="day-date">May 2nd</div>
+        <div class="timeline-events">
+          <div class="timeline-event"><span class="time">Morning</span><span>Head out to explore Wayanad. Coffee plantations, viewpoints, the works.</span></div>
+          <div class="timeline-event"><span class="time">Afternoon</span><span>Free time. Pool, walks, conversations with the Rethink team.</span></div>
+          <div class="timeline-event"><span class="time">Evening</span><span><span class="highlight">The Rethink Tank.</span> Teams form, ideas are pitched to a live panel.</span></div>
+          <div class="timeline-event"><span class="time">Night</span><span>Dinner, music, bonfire, karaoke.</span></div>
+          <div class="timeline-event"><span class="time">Late Night</span><span><span class="highlight">Special session with Shravan</span> around the fire. No agenda. Just honest conversation.</span></div>
+        </div>
+      </div>
+      <div class="timeline-day">
+        <h3>Day 3 &mdash; Convocation &amp; Goodbye</h3>
+        <div class="day-date">May 3rd</div>
+        <div class="timeline-events">
+          <div class="timeline-event"><span class="time">Morning</span><span><span class="highlight">Cohort Convocation.</span> Certificates, recognition, and words that matter.</span></div>
+          <div class="timeline-event"><span class="time">Late AM</span><span>Last breakfast together. Final conversations. Goodbyes that don't quite feel like goodbyes.</span></div>
+          <div class="timeline-event"><span class="time">Afternoon</span><span>Chartered bus back to Bengaluru. Arrive by evening.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- MID CTA -->
+<!-- ============================================ -->
+<section class="mid-cta">
+  <h2>Already know you are <em>coming?</em></h2>
+  <p>Skip ahead. Grab your seat before the 25 fill up.</p>
+  <a href="#" class="btn-primary" style="margin-top:1.5rem" onclick="openForm();return false">Register Now &rarr;</a>
+</section>
+
+<!-- ============================================ -->
+<!-- 06 — PRICING -->
+<!-- ============================================ -->
+<section class="pricing">
+  <div class="container reveal">
+    <div class="section-number">06 &mdash; The Investment</div>
+    <h2 class="section-title" style="color:var(--cream)">Let's talk <em style="color:var(--gold)">numbers.</em></h2>
+    <p class="prose" style="color:rgba(250,248,244,.75)">We want to be completely transparent with you. Rethink is not a tour company. This is not a business for us. We are putting this retreat together because we genuinely believe that what happens in these three days matters &mdash; for your careers, for your relationships, and for the community we are building together.</p>
+    <p class="prose" style="color:rgba(250,248,244,.75)">The fee covers a fraction of what it actually costs to make this happen. The rest comes out of Rethink's pocket. Here is the full picture.</p>
+    <div class="price-box reveal-scale reveal price-shimmer">
+      <div class="amount">&#8377;20,000</div>
+      <div class="gst">+ GST (Total &asymp; &#8377;23,600 per person)</div>
+      <div class="tagline">Once you reach Bengaluru, everything is on us.</div>
+      <div class="price-includes">
+        <div class="price-include"><span class="check">&#10003;</span> Chartered bus (BLR &#8596; Wayanad)</div>
+        <div class="price-include"><span class="check">&#10003;</span> 2 nights resort accommodation</div>
+        <div class="price-include"><span class="check">&#10003;</span> All meals covered (Day 1&ndash;3)</div>
+        <div class="price-include"><span class="check">&#10003;</span> All activities &amp; experiences</div>
+        <div class="price-include"><span class="check">&#10003;</span> Wayanad excursion</div>
+        <div class="price-include"><span class="check">&#10003;</span> Convocation ceremony</div>
+      </div>
+    </div>
+    <div class="breakdown">
+      <h3>Where your money actually goes</h3>
+      <div class="breakdown-note">Full transparency. These are the real numbers.</div>
+      <div class="breakdown-items">
+        <div class="breakdown-item"><span class="b-label">Resort &mdash; 2 nights, 25 pax, all meals</span><span class="b-value">&#8377;4.5&ndash;5.0L</span></div>
+        <div class="breakdown-item"><span class="b-label">Chartered bus &mdash; BLR Airport &#8596; Wayanad</span><span class="b-value">&#8377;0.8&ndash;1.0L</span></div>
+        <div class="breakdown-item"><span class="b-label">Activities, Rethink Tank &amp; special evening</span><span class="b-value">&#8377;0.6&ndash;0.8L</span></div>
+        <div class="breakdown-item"><span class="b-label">Miscellaneous, logistics &amp; taxes</span><span class="b-value">&#8377;1.5L</span></div>
+        <div class="breakdown-item total"><span class="b-label">Total estimated cost</span><span class="b-value">&#8377;7.4&ndash;8.3L</span></div>
+      </div>
+      <div class="breakdown-footer">25 people &times; &#8377;20,000 = &#8377;5,00,000 collected<br>Total cost runs &#8377;7.4&ndash;8.3L &mdash; Rethink covers the rest out of pocket.<br><strong style="color:rgba(250,248,244,.65)">We are not making money here. We are spending it &mdash; on you.</strong></div>
+    </div>
+    <div class="payment-flex">
+      <p>Need to split the payment or work out a timeline that is easier for you?<br><strong style="color:var(--moss-light)">Just talk to us. We will figure it out together.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 07 — OUTSTATION EMPATHY -->
+<!-- ============================================ -->
+<section class="outstation">
+  <div class="container reveal">
+    <div class="section-number">07 &mdash; A Note for Outstation Folks</div>
+    <h2 class="section-title">Coming from <em>Delhi, Pune, Mumbai?</em></h2>
+    <div class="outstation-card reveal-left reveal">
+      <h3>We know the flights add up. And we are not going to pretend otherwise.</h3>
+      <p>Delhi flights especially can be steep right now. And if you are coming from Pune, Mumbai, Hyderabad, or anywhere else &mdash; we genuinely understand that this is an extra effort, both financially and logistically.</p>
+      <p>We want to be upfront about it because we respect that it is real money. But here is what we will say with full conviction: <strong>every single person who has made this trip in past cohorts has said it was worth it.</strong> Not just worth it &mdash; life-changing. The bonds, the conversations, the opportunities that open up &mdash; these are things that do not happen on a video call. They happen when you show up in person.</p>
+      <p>We acknowledge the effort. And we promise the experience will more than match it. <strong>Book your flights early &mdash; fares only go up closer to the date.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 08 — WHAT YOU WALK AWAY WITH -->
+<!-- ============================================ -->
+<section class="perks">
+  <div class="container-wide reveal">
+    <div class="section-number">08 &mdash; What You Walk Away With</div>
+    <h2 class="section-title">This is not a vacation you <em>come back from and forget.</em></h2>
+    <div class="perks-grid stagger-children reveal">
+      <div class="perk-card stagger-item">
+        <div class="perk-icon"><svg viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+        <h3>Friendships for Life</h3>
+        <p>After three days in Wayanad, you will know these people properly. The kind of friendships that last decades &mdash; not just a cohort that fades.</p>
+      </div>
+      <div class="perk-card stagger-item">
+        <div class="perk-icon"><svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
+        <h3>3 Days with Shravan</h3>
+        <p>The campfire version. The breakfast version. The walking-through-a-plantation version. Three days of unfiltered access to someone who genuinely cares about where you end up.</p>
+      </div>
+      <div class="perk-card stagger-item">
+        <div class="perk-icon"><svg viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></div>
+        <h3>Mentors Who Actually Know You</h3>
+        <p>The Rethink team will have seen you, heard you think out loud, and understood who you actually are. Not your resume. Not your Notion doc. You.</p>
+      </div>
+      <div class="perk-card stagger-item">
+        <div class="perk-icon"><svg viewBox="0 0 24 24"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg></div>
+        <h3>The Rethink Tank Experience</h3>
+        <p>A live competition you will remember for years. Past cohorts still talk about it. You will too.</p>
+      </div>
+    </div>
+
+    <!-- IMAGE 6 & 7: Retreat moments -->
+    <div class="img-grid img-grid-animated reveal" style="margin-top:2.5rem">
+      <div class="img-placeholder" id="img-6">
+        <span class="ph-label">Image 6</span>
+        <span class="ph-desc">Bonfire / late-night conversation moment</span>
+      </div>
+      <div class="img-placeholder" id="img-7">
+        <span class="ph-label">Image 7</span>
+        <span class="ph-desc">Fun group moment / activity / laughter</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 09 — RETHINK ACCELERATOR (SPECIAL) -->
+<!-- ============================================ -->
+<section class="opportunity opp-accelerator" style="padding:5rem 2rem">
+  <div class="opportunity-inner reveal">
+    <div class="opp-badge"><span class="opp-dot"></span> Career Opportunity</div>
+    <h2 class="opp-title">The Rethink <em>Accelerator.</em><br>And how you get in.</h2>
+    <p class="opp-prose">Rethink is not just a learning program. It has a consulting vertical &mdash; the Rethink Accelerator &mdash; where the team works directly with real companies to help them build, improve, and scale their products. Real companies. Real problems. Real product work. The kind of work that most people spend years trying to get access to.</p>
+    <p class="opp-prose">When the Rethink team needs consultants for these projects, they do not post a job listing. They do not run an application process. <strong>They go to the people they know.</strong> People they have sat across from. People they have watched think on their feet. People whose instincts they trust because they have seen them in action &mdash; not on a resume, but in a room.</p>
+    <p class="opp-prose">The retreat is that room.</p>
+
+    <div class="opp-points reveal">
+      <div class="opp-point">
+        <div class="opp-point-icon"><svg viewBox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <div>
+          <h4>Real product consulting work</h4>
+          <p>Work directly with companies on live product challenges. Not case studies. Not simulations. Actual products with actual users and actual stakes.</p>
+        </div>
+      </div>
+      <div class="opp-point">
+        <div class="opp-point-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <div>
+          <h4>Trust, not applications</h4>
+          <p>There is no form to fill. No interview panel. The team picks people they have spent real time with and whose thinking they have seen first-hand. The retreat is the most concentrated way to build that trust.</p>
+        </div>
+      </div>
+      <div class="opp-point">
+        <div class="opp-point-icon"><svg viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
+        <div>
+          <h4>A career accelerant</h4>
+          <p>Past consultants have gone on to land PM roles at startups and product companies with the accelerator work as their strongest portfolio proof. This is not a certificate. It is real, referenceable product work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="opp-quote">Three days of being seen, heard, and understood by the people who make these decisions. That is what the retreat gives you.</div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 10 — CORE TEAM & ROLES (SPECIAL) -->
+<!-- ============================================ -->
+<section class="opportunity opp-roles" style="padding:5rem 2rem">
+  <div class="opportunity-inner reveal">
+    <div class="opp-badge"><span class="opp-dot"></span> Community Opportunity</div>
+    <h2 class="opp-title">Core Team. Mentors.<br><em>Post-Cohort</em> Leaders.</h2>
+    <p class="opp-prose">Rethink is growing. And the people who shape what comes next are not going to be strangers. They are going to be people from this community &mdash; people who have been through the program, who understand what makes it work, and who want to give back to the next batch.</p>
+    <p class="opp-prose">We are actively looking for people to step into real roles &mdash; not volunteer positions with a fancy title, but roles with real responsibility, real impact, and a direct line to how Rethink evolves.</p>
+
+    <div class="opp-points reveal">
+      <div class="opp-point">
+        <div class="opp-point-icon"><svg viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div>
+        <div>
+          <h4>Post-Cohort Leadership</h4>
+          <p>Help shape the experience for the next cohort. Run post-cohort activities, facilitate sessions, be the bridge between alumni and new members. This is how the community sustains itself.</p>
+        </div>
+      </div>
+      <div class="opp-point">
+        <div class="opp-point-icon"><svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+        <div>
+          <h4>Mentor Roles</h4>
+          <p>You have been mentored. Now it is your turn. Mentor the next batch, guide their thinking, shape their growth. It compounds your own learning in ways nothing else can.</p>
+        </div>
+      </div>
+      <div class="opp-point">
+        <div class="opp-point-icon"><svg viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
+        <div>
+          <h4>Core Team</h4>
+          <p>Rethink is building out its core team. Operations, content, community, programs &mdash; these are real roles for people who want to be part of building something meaningful. Some of the current core team members started exactly where you are right now.</p>
+        </div>
+      </div>
+      <div class="opp-point">
+        <div class="opp-point-icon"><svg viewBox="0 0 24 24"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <div>
+          <h4>Upcoming Bootcamps</h4>
+          <p>Rethink is planning targeted bootcamps for specific personas. We will need facilitators, mentors, and leads who have been through the full program. This is your chance to be part of building what comes next.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="opp-quote">Deepak, Kartik, and Himanshu &mdash; three past cohort members who took on real roles at Rethink. Not because they applied. Because they showed up at the retreat, the team saw them, and the rest followed.</div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 11 — SOCIAL PROOF -->
+<!-- ============================================ -->
+<section class="proof">
+  <div class="container reveal">
+    <div class="section-number">11 &mdash; It Has Happened Before</div>
+    <h2 class="section-title" style="color:var(--cream)">This is not a <em style="color:var(--gold)">promise.</em><br>It is a <em style="color:var(--gold)">pattern.</em></h2>
+    <p class="prose" style="color:rgba(250,248,244,.8)">Every single retreat has led to real outcomes for the people who showed up. Consulting projects. Mentor roles. Core team positions. Career pivots that started with a conversation over dinner. None of this was planned in advance. It happened because people were in the same room, at the same time, and the team got to see who they really are.</p>
+    <p class="prose" style="color:rgba(250,248,244,.8)">When the Rethink team is looking for people to bring into the fold &mdash; whether that is consulting, mentoring, or building the next chapter of Rethink itself &mdash; they go to the people they know. <strong style="color:var(--gold)">The retreat is where that knowing begins.</strong></p>
+
+    <!-- IMAGE 8: Past retreat meaningful moment -->
+    <div class="img-placeholder img-inline dark-ph" id="img-8">
+      <span class="ph-label">Image 8</span>
+      <span class="ph-desc">Past retreat team photo / meaningful moment / convocation</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 12 — 25 SEATS -->
+<!-- ============================================ -->
+<section class="seats">
+  <div class="container reveal">
+    <div class="section-number">12 &mdash; Limited</div>
+    <h2 class="section-title" style="color:var(--cream)">This is not about scale.<br>It is about <em style="color:var(--gold)">depth.</em></h2>
+    <div class="seats-count reveal-scale reveal glow-animate">25</div>
+    <p class="seats-sub">seats. First come, first served. Once they are gone, they are gone.</p>
+    <p style="font-size:1rem;color:rgba(250,248,244,.6);max-width:500px;margin:0 auto;line-height:1.7;position:relative;z-index:1">We want every person there to have a genuine, meaningful, unhurried experience. That only happens when the group is small enough for everyone to actually connect.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- LOGISTICS -->
+<!-- ============================================ -->
+<section class="logistics">
+  <div class="container-wide reveal">
+    <div class="section-number">Logistics</div>
+    <h2 class="section-title">Before you <em>pack</em></h2>
+    <div class="logistics-grid stagger-children reveal">
+      <div class="logistic-item stagger-item">
+        <h3><span class="l-icon"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></span> Accommodation</h3>
+        <p>Shared rooms with a fellow cohort member. Proper, well-furnished, comfortable beds, all amenities. Roommate preferences accommodated &mdash; just let us know.</p>
+      </div>
+      <div class="logistic-item stagger-item">
+        <h3><span class="l-icon"><svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span> Food</h3>
+        <p>All meals fully covered &mdash; breakfast on May 1st through breakfast on May 3rd. Veg and non-veg options. Mention dietary requirements at registration.</p>
+      </div>
+      <div class="logistic-item stagger-item">
+        <h3><span class="l-icon"><svg viewBox="0 0 24 24"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg></span> Travel</h3>
+        <p>If travelling from outside Bengaluru, reach BLR Airport by midnight on April 30th. Travel to Bengaluru is on you &mdash; everything from the airport onwards is covered.</p>
+      </div>
+      <div class="logistic-item stagger-item">
+        <h3><span class="l-icon"><svg viewBox="0 0 24 24"><path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg></span> Packing</h3>
+        <p>Light layers for 20&ndash;27&deg;C weather. Walking shoes for the outing. Your instruments, cards, speakers, games &mdash; anything that adds to the vibe. And a good mood.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- GUIDELINES -->
+<!-- ============================================ -->
+<section class="guidelines">
+  <div class="container-wide reveal">
+    <div class="section-number">Community</div>
+    <h2 class="section-title">How we <em>show up</em></h2>
+    <div class="guideline-list stagger-children reveal">
+      <div class="guideline stagger-item"><span class="g-dot"></span> Respect everyone &mdash; cohort, team, resort staff. Non-negotiable.</div>
+      <div class="guideline stagger-item"><span class="g-dot"></span> Fully alcohol-free. No exceptions.</div>
+      <div class="guideline stagger-item"><span class="g-dot"></span> Be honest, present, and yourself.</div>
+      <div class="guideline stagger-item"><span class="g-dot"></span> Show up on time. 25 people moving together requires everyone to be responsible.</div>
+      <div class="guideline stagger-item"><span class="g-dot"></span> If someone looks lost, include them.</div>
+      <div class="guideline stagger-item"><span class="g-dot"></span> Conversations stay within the group unless someone says otherwise.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FINAL CTA -->
+<!-- ============================================ -->
+<section class="cta">
+  <div class="container reveal">
+    <h2>You have done <em>the hard part.</em><br>Now come and <em>enjoy it.</em></h2>
+    <p>25 seats. The people, the place, the conversations &mdash; all waiting for you.</p>
+    <a href="#" class="btn-primary" style="margin-top:2.5rem;padding:1.1rem 3.5rem;font-size:1rem" onclick="openForm();return false">Register for the Retreat &rarr;</a>
+    <div class="cta-share">
+      <a href="#">Know someone who should be there? Share this page.</a>
+    </div>
+  </div>
+</section>
+
+<div class="footer"><p>Rethink Systems &middot; Grad Retreat 2025 &middot; Wayanad, Kerala</p></div>
+
+<script>
+// Unified observer for all animated elements
+const animObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+// Observe all animatable elements
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur, .stagger-children, .counter-animate, .glow-animate, .float-on-visible, .quote-line-draw, .price-shimmer, .img-grid-animated').forEach(el => {
+  animObserver.observe(el);
+});
+
+// Smooth number counter for the seats count
+const seatsEl = document.querySelector('.seats-count');
+if (seatsEl) {
+  const seatsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !seatsEl.dataset.counted) {
+        seatsEl.dataset.counted = 'true';
+        let current = 0;
+        const target = 25;
+        const duration = 1500;
+        const stepTime = duration / target;
+        const counter = setInterval(() => {
+          current++;
+          seatsEl.textContent = current;
+          if (current >= target) clearInterval(counter);
+        }, stepTime);
+      }
+    });
+  }, { threshold: 0.3 });
+  seatsObserver.observe(seatsEl);
+}
+
+// Parallax-style subtle movement on scroll for hero
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const scrollY = window.scrollY;
+      const hero = document.querySelector('.hero');
+      if (hero && scrollY < window.innerHeight) {
+        const progress = scrollY / window.innerHeight;
+        hero.style.setProperty('--scroll', progress);
+        const title = hero.querySelector('h1');
+        const sub = hero.querySelector('.hero-sub');
+        const details = hero.querySelector('.hero-details');
+        if (title) title.style.transform = `translateY(${scrollY * 0.15}px)`;
+        if (sub) sub.style.transform = `translateY(${scrollY * 0.1}px)`;
+        if (details) details.style.transform = `translateY(${scrollY * 0.08}px)`;
+        hero.style.opacity = 1 - (progress * 0.6);
+      }
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+</script>
+<!-- ============================================ -->
+<!-- REGISTRATION FORM OVERLAY -->
+<!-- ============================================ -->
+<style>
+/* Form Overlay */
+.form-overlay{position:fixed;inset:0;z-index:9999;background:var(--moss);opacity:0;visibility:hidden;transition:opacity .5s cubic-bezier(.4,0,.2,1),visibility .5s;overflow-y:auto;overflow-x:hidden}
+.form-overlay.open{opacity:1;visibility:visible}
+.form-overlay::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 600px 500px at 30% 20%,rgba(61,107,88,.4),transparent),radial-gradient(ellipse 500px 400px at 80% 80%,rgba(201,168,76,.06),transparent);pointer-events:none;z-index:0}
+.form-overlay::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+
+.form-close{position:fixed;top:1.5rem;right:1.5rem;z-index:10001;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s ease}
+.form-close:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);transform:rotate(90deg)}
+.form-close svg{width:18px;height:18px;stroke:var(--cream);stroke-width:2}
+
+/* Progress */
+.form-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:10001;background:rgba(255,255,255,.06)}
+.form-progress-bar{height:100%;background:linear-gradient(90deg,var(--moss-light),var(--gold));border-radius:0 3px 3px 0;transition:width .5s cubic-bezier(.4,0,.2,1)}
+
+.form-progress-steps{position:fixed;top:1.5rem;left:50%;transform:translateX(-50%);z-index:10001;display:flex;align-items:center;gap:.3rem}
+.form-progress-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);transition:all .4s ease}
+.form-progress-dot.active{background:var(--gold);transform:scale(1.3)}
+.form-progress-dot.done{background:var(--moss-light)}
+
+/* Step container */
+.form-steps{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:4rem 2rem}
+
+.form-step{position:absolute;width:100%;max-width:580px;opacity:0;transform:translateX(80px);transition:all .5s cubic-bezier(.4,0,.2,1);pointer-events:none;padding:0 1rem}
+.form-step.active{opacity:1;transform:translateX(0);pointer-events:all}
+.form-step.exit-left{opacity:0;transform:translateX(-80px)}
+
+/* Step content */
+.form-step-number{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;opacity:.7}
+
+.form-step h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:.5rem}
+.form-step h2 em{font-style:italic;color:var(--gold)}
+
+.form-step .step-subtitle{font-size:.88rem;color:rgba(250,248,244,.5);line-height:1.6;margin-bottom:2rem;max-width:480px}
+
+/* Inputs */
+.form-input{width:100%;padding:1rem 0;font-family:'DM Sans',sans-serif;font-size:1.15rem;color:var(--cream);background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,.12);outline:none;transition:border-color .3s ease;caret-color:var(--gold)}
+.form-input::placeholder{color:rgba(250,248,244,.25)}
+.form-input:focus{border-bottom-color:var(--gold)}
+
+textarea.form-input{resize:none;min-height:80px;line-height:1.6}
+
+/* Select / Radio options */
+.form-options{display:flex;flex-direction:column;gap:.8rem;margin-top:.5rem}
+.form-option{padding:1rem 1.3rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;gap:.8rem;color:rgba(250,248,244,.7);font-size:.95rem}
+.form-option:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);transform:translateX(4px)}
+.form-option.selected{background:rgba(61,107,88,.25);border-color:var(--moss-light);color:var(--cream)}
+.form-option .option-dot{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .3s ease}
+.form-option.selected .option-dot{border-color:var(--gold);background:var(--gold)}
+.form-option.selected .option-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--moss)}
+
+/* Size grid */
+.form-sizes{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.form-size{width:60px;height:60px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.82rem;color:rgba(250,248,244,.6);cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1)}
+.form-size:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
+.form-size.selected{background:rgba(61,107,88,.3);border-color:var(--moss-light);color:var(--gold);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+
+/* Navigation */
+.form-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;gap:1rem}
+.form-nav-back{padding:.7rem 1.5rem;background:transparent;border:1px solid rgba(255,255,255,.12);border-radius:100px;color:rgba(250,248,244,.5);font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .3s ease}
+.form-nav-back:hover{border-color:rgba(255,255,255,.3);color:var(--cream)}
+.form-nav-next{padding:.8rem 2rem;background:var(--gold);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:700;letter-spacing:.03em;border:none;border-radius:100px;cursor:pointer;transition:all .35s cubic-bezier(.4,0,.2,1)}
+.form-nav-next:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 6px 25px rgba(201,168,76,.25)}
+.form-nav-next:disabled{opacity:.3;cursor:not-allowed;transform:none;box-shadow:none}
+.form-nav-next.submit-btn{padding:.9rem 2.5rem;font-size:.95rem}
+
+/* Keyboard hint */
+.form-key-hint{position:fixed;bottom:1.5rem;right:1.5rem;z-index:10001;font-size:.72rem;color:rgba(250,248,244,.2);display:flex;align-items:center;gap:.4rem}
+.form-key-hint kbd{padding:.15rem .4rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:.65rem}
+
+/* Welcome step */
+.form-welcome-icon{width:64px;height:64px;border-radius:20px;background:rgba(61,107,88,.2);border:1px solid rgba(61,107,88,.3);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.form-welcome-icon svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:1.5}
+
+/* Success step */
+.form-success{text-align:center}
+.form-success-icon{width:80px;height:80px;border-radius:50%;background:rgba(61,107,88,.2);border:2px solid var(--moss-light);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;animation:scaleIn .5s cubic-bezier(.4,0,.2,1)}
+.form-success-icon svg{width:36px;height:36px;stroke:var(--gold);fill:none;stroke-width:2;stroke-dasharray:60;stroke-dashoffset:60;animation:drawCheck .6s ease .3s forwards}
+@keyframes drawCheck{to{stroke-dashoffset:0}}
+
+.form-confetti{position:fixed;inset:0;pointer-events:none;z-index:10002}
+
+@media(max-width:600px){
+  .form-progress-steps{display:none}
+  .form-key-hint{display:none}
+  .form-sizes{gap:.5rem}
+  .form-size{width:52px;height:52px}
+  .form-step h2{font-size:1.4rem}
+}
+</style>
+
+<div class="form-overlay" id="formOverlay">
+  <div class="form-close" onclick="closeForm()"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
+  <div class="form-progress"><div class="form-progress-bar" id="progressBar" style="width:0%"></div></div>
+  <div class="form-progress-steps" id="progressDots"></div>
+  <div class="form-key-hint"><kbd>Enter</kbd> to continue &middot; <kbd>Esc</kbd> to close</div>
+
+  <div class="form-steps" id="formSteps">
+
+    <!-- STEP 0: Welcome -->
+    <div class="form-step active" data-step="0">
+      <div class="form-welcome-icon"><svg viewBox="0 0 24 24"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg></div>
+      <h2>Let's get you <em>registered.</em></h2>
+      <p class="step-subtitle">10 quick questions. Takes about 2 minutes. We promise it will be fun.</p>
+      <div class="form-nav" style="justify-content:flex-start">
+        <button class="form-nav-next" onclick="goNext()">Let's Go &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 1: Name -->
+    <div class="form-step" data-step="1" data-field="name">
+      <div class="form-step-number">01 / 10</div>
+      <h2>What's your <em>name?</em></h2>
+      <p class="step-subtitle">The one your friends actually call you.</p>
+      <input class="form-input" type="text" placeholder="Your full name" id="f-name" autocomplete="off">
+      <div class="form-nav">
+        <button class="form-nav-back" onclick="goBack()">&larr; Back</button>
+        <button class="form-nav-next" onclick="goNext()">Next &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Phone -->
+    <div class="form-step" data-step="2" data-field="phone">
+      <div class="form-step-number">02 / 10</div>
+      <h2>Your <em>phone number?</em></h2>
+      <p class="step-subtitle">In case we need to track you down for a chai break or to share surprise plans. Yes, there will be some.</p>
+      <input class="form-input" type="tel" placeholder="+91 98765 43210" id="f-phone" autocomplete="off">
+      <div class="form-nav">
+        <button class="form-nav-back" onclick="goBack()">&larr; Back</button>
+        <button class="form-nav-next" onclick="goNext()">Next &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Age -->
+    <div class="form-step" data-step="3" data-field="age">
+      <div class="form-step-number">03 / 10</div>
+      <h2>How old <em>are you?</em></h2>
+      <p class="step-subtitle">No ageism here &mdash; just helps us with room planning and curating a vibe that works for everyone.</p>
+      <input class="form-input" type="number" placeholder="Your age" id="f-age" min="16" max="60" autocomplete="off">
+      <div class="form-nav">
+        <button class="form-nav-back" onclick="goBack()">&larr; Back</button>
+        <button class="form-nav-next" onclick="goNext()">Next &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: City -->
+    <div class="form-step" data-step="4" data-field="city">
+      <div class="form-step-number">04 / 10</div>
+      <h2>Which <em>city</em> are you in?</h2>
+      <p class="step-subtitle">Helps us with logistics and bonding over who's bringing what regional snack.</p>
+      <input class="form-input" type="text" placeholder="e.g. Delhi, Mumbai, Bengaluru..." id="f-city" autocomplete="off">
+      <div class="form-nav">
+        <button class="form-nav-back" onclick="goBack()">&larr; Back</button>
+        <button class="form-nav-next" onclick="goNext()">Next &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 5: Motion sickness -->
+    <div class="form-step" data-step="5" data-field="motion">
+      <div class="form-step-number">05 / 10</div>
+      <h2>Motion sickness or <em>bus concerns?</em></h2>
+      <p class="step-subtitle">We're all about good vibes, but not the kind that make you sick. Let us know if we need to pack some extra care for your ride.</p>
+      <div class="form-options" data-name="motion">
+        <div class="form-option" data-value="No issues"><span class="option-dot"></span>Nope, I'm all good</div>
+        <div class="form-option" data-value="Mild"><span class="option-dot"></span>Mildly &mdash; a window seat should fix it</div>
+        <div class="form-option" data-value="Yes"><span class="option-dot"></span>Yes, please keep medicines handy</div>
+      </div>
+      <div class="form-nav">
+        <button class="form-nav-back" onclick="goBack()">&larr; Back</button>
+        <button class="form-nav-next" onclick="goNext()">Next &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 6: Traveling from -->
+    <div class="form-step" data-step="6" data-field="travelFrom">
+      <div class="form-step-number">06 / 10</div>
+      <h2>Where are you <em>traveling from</em> to reach Bangalore?</h2>
+      <p class="step-subtitle">So, are you flying in from the land of vada pav, biryani, butter chicken, or something even better?</p>
+      <div class="form-options" data-name="travelFrom">
+        <div class="form-option" data-value="Already in Bangalore"><span class="option-dot"></span>Already in Bangalore</div>
+        <div class="form-option" data-value="Delhi / NCR"><span class="option-dot"></span>Delhi / NCR</div>
+        <div class="form-option" data-value="Mumbai / Pune"><span class="option-dot"></span>Mumbai / Pune</div>
+        <div class="form-option" data-value="Hyderabad"><span class="option-dot"></span>Hyderabad</div>
+        <div class="form-option" data-value="Other"><span class="option-dot"></span>Somewhere else (I'll survive)</div>
+      </div>
+      <div class="form-nav">
+        <button class="form-nav-back" onclick="goBack()">&larr; Back</button>
+        <button class="form-nav-next" onclick="goNext()">Next &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 7: Food -->
+    <div class="form-step" data-step="7" data-field="food">
+      <div class="form-step-number">07 / 10</div>
+      <h2>What's your <em>food preference?</em></h2>
+      <p class="step-subtitle">Team Veg, Team Non-Veg, or the adventurous "Either is fine"? We promise no judgment &mdash; unless you say pineapple on pizza.</p>
+      <div class="form-options" data-name="food">
+        <div class="form-option" data-value="Vegetarian"><span class="option-dot"></span>Vegetarian</div>
+        <div class="form-option" data-value="Non-Vegetarian"><span class="option-dot"></span>Non-Vegetarian</div>
+        <div class="form-option" data-value="Either is fine"><span class="option-dot"></span>Either is fine &mdash; I eat everything</div>
+        <div class="form-option" data-value="Vegan"><span class="option-dot"></span>Vegan</div>
+      </div>
+      <div class="form-nav">
+        <button class="form-nav-back" onclick="goBack()">&larr; Back</button>
+        <button class="form-nav-next" onclick="goNext()">Next &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 8: T-shirt size -->
+    <div class="form-step" data-step="8" data-field="tshirt">
+      <div class="form-step-number">08 / 10</div>
+      <h2>Your <em>T-shirt</em> size?</h2>
+      <p class="step-subtitle">Because rocking a tent-sized T-shirt or a crop top (unintentionally) is not the vibe we're going for. Let's get you the perfect fit.</p>
+      <div class="form-sizes" data-name="tshirt">
+        <div class="form-size" data-value="XS">XS</div>
+        <div class="form-size" data-value="S">S</div>
+        <div class="form-size" data-value="M">M</div>
+        <div class="form-size" data-value="L">L</div>
+        <div class="form-size" data-value="XL">XL</div>
+        <div class="form-size" data-value="XXL">XXL</div>
+      </div>
+      <div class="form-nav">
+        <button class="form-nav-back" onclick="goBack()">&larr; Back</button>
+        <button class="form-nav-next" onclick="goNext()">Next &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 9: Allergies -->
+    <div class="form-step" data-step="9" data-field="allergies">
+      <div class="form-step-number">09 / 10</div>
+      <h2>Any allergies or <em>health issues?</em></h2>
+      <p class="step-subtitle">We love surprises &mdash; but not the kind that involve allergic reactions. Tell us if peanuts, gluten, dairy, or anything else needs to stay off your plate.</p>
+      <textarea class="form-input" placeholder="None / List your allergies or conditions..." id="f-allergies" rows="3"></textarea>
+      <div class="form-nav">
+        <button class="form-nav-back" onclick="goBack()">&larr; Back</button>
+        <button class="form-nav-next" onclick="goNext()">Next &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 10: Fun fact -->
+    <div class="form-step" data-step="10" data-field="funfact">
+      <div class="form-step-number">10 / 10</div>
+      <h2>One <em>fun fact</em> about you?</h2>
+      <p class="step-subtitle">Quirky, cool, or downright hilarious &mdash; tell us something to break the ice before we hit the road.</p>
+      <textarea class="form-input" placeholder="e.g. I can mimic a pressure cooker whistle perfectly. You'll hear it when we stop for chai!" id="f-funfact" rows="3"></textarea>
+      <div class="form-nav">
+        <button class="form-nav-back" onclick="goBack()">&larr; Back</button>
+        <button class="form-nav-next submit-btn" onclick="submitForm()">Submit Registration &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 11: Success -->
+    <div class="form-step" data-step="11">
+      <div class="form-success">
+        <div class="form-success-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+        <h2>You're <em>in.</em></h2>
+        <p class="step-subtitle" style="margin:1rem auto;max-width:400px">We've got your registration. Get ready for three days that will change everything. We'll be in touch soon with next steps.</p>
+        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--gold);margin-top:1.5rem;opacity:.8">See you in Wayanad.</p>
+        <button class="form-nav-next" style="margin-top:2rem" onclick="closeForm()">Back to Page</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Form state
+let currentStep = 0;
+const totalSteps = 11;
+const formData = {};
+
+function openForm() {
+  const overlay = document.getElementById('formOverlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  currentStep = 0;
+  renderDots();
+  updateProgress();
+  // Focus first input after animation
+  setTimeout(() => {
+    const input = document.querySelector('.form-step.active input, .form-step.active textarea');
+    if (input) input.focus();
+  }, 600);
+}
+
+function closeForm() {
+  const overlay = document.getElementById('formOverlay');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  // Reset to step 0
+  setTimeout(() => {
+    document.querySelectorAll('.form-step').forEach(s => {
+      s.classList.remove('active', 'exit-left');
+    });
+    document.querySelector('[data-step="0"]').classList.add('active');
+    currentStep = 0;
+    updateProgress();
+  }, 500);
+}
+
+function renderDots() {
+  const container = document.getElementById('progressDots');
+  container.innerHTML = '';
+  for (let i = 0; i <= 10; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'form-progress-dot' + (i === 0 ? ' active' : '');
+    container.appendChild(dot);
+  }
+}
+
+function updateProgress() {
+  const pct = currentStep <= 0 ? 0 : (currentStep / 10) * 100;
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.querySelectorAll('.form-progress-dot').forEach((dot, i) => {
+    dot.classList.remove('active', 'done');
+    if (i < currentStep) dot.classList.add('done');
+    if (i === currentStep) dot.classList.add('active');
+  });
+}
+
+function saveCurrentStep() {
+  const step = document.querySelector(`[data-step="${currentStep}"]`);
+  if (!step) return;
+  const field = step.dataset.field;
+  if (!field) return;
+
+  const input = step.querySelector('input, textarea');
+  if (input) { formData[field] = input.value; return; }
+
+  const selected = step.querySelector('.form-option.selected, .form-size.selected');
+  if (selected) { formData[field] = selected.dataset.value; }
+}
+
+function goNext() {
+  saveCurrentStep();
+  if (currentStep >= totalSteps) return;
+
+  const current = document.querySelector(`[data-step="${currentStep}"]`);
+  const next = document.querySelector(`[data-step="${currentStep + 1}"]`);
+  if (!next) return;
+
+  current.classList.remove('active');
+  current.classList.add('exit-left');
+  setTimeout(() => current.classList.remove('exit-left'), 500);
+
+  next.classList.add('active');
+  currentStep++;
+  updateProgress();
+
+  setTimeout(() => {
+    const input = next.querySelector('input, textarea');
+    if (input) input.focus();
+  }, 400);
+}
+
+function goBack() {
+  if (currentStep <= 0) return;
+
+  const current = document.querySelector(`[data-step="${currentStep}"]`);
+  const prev = document.querySelector(`[data-step="${currentStep - 1}"]`);
+
+  current.classList.remove('active');
+  prev.classList.add('active');
+  currentStep--;
+  updateProgress();
+
+  setTimeout(() => {
+    const input = prev.querySelector('input, textarea');
+    if (input) input.focus();
+  }, 400);
+}
+
+const AIRTABLE_TOKEN = 'patq4rsvKwz8RdoQk.d7115ed44dcc17658695d5e3cc24991a8b21340f7d687c1f118e800614986707';
+const AIRTABLE_URL = 'https://api.airtable.com/v0/appcnuxQH1TUrfhsB/tbltXONM3eA8o9xhx';
+
+async function submitForm() {
+  saveCurrentStep();
+
+  const submitBtn = document.querySelector('.submit-btn');
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting…'; }
+
+  try {
+    const res = await fetch(AIRTABLE_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + AIRTABLE_TOKEN,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        fields: {
+          'Name': formData.name || '',
+          'phone': formData.phone || '',
+          'age': parseInt(formData.age) || null,
+          'city': formData.city || '',
+          'motion': formData.motion || '',
+          'travelFrom': formData.travelFrom || '',
+          'food': formData.food || '',
+          'tshirt': formData.tshirt || '',
+          'allergies': formData.allergies || '',
+          'funfact': formData.funfact || '',
+          'submittedAt': new Date().toISOString()
+        }
+      })
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.error?.message || 'Airtable error');
+    }
+
+    goNext();
+    launchConfetti();
+  } catch (err) {
+    console.error('Submission error:', err);
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Registration →'; }
+    alert('Something went wrong. Please try again or contact us directly.');
+  }
+}
+
+// Option selection
+document.querySelectorAll('.form-option').forEach(opt => {
+  opt.addEventListener('click', () => {
+    const parent = opt.closest('.form-options');
+    parent.querySelectorAll('.form-option').forEach(o => o.classList.remove('selected'));
+    opt.classList.add('selected');
+  });
+});
+
+// Size selection
+document.querySelectorAll('.form-size').forEach(s => {
+  s.addEventListener('click', () => {
+    const parent = s.closest('.form-sizes');
+    parent.querySelectorAll('.form-size').forEach(o => o.classList.remove('selected'));
+    s.classList.add('selected');
+  });
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  const overlay = document.getElementById('formOverlay');
+  if (!overlay.classList.contains('open')) return;
+
+  if (e.key === 'Escape') { closeForm(); return; }
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    if (currentStep === 10) submitForm();
+    else goNext();
+  }
+});
+
+// Confetti
+function launchConfetti() {
+  const container = document.querySelector('.form-overlay');
+  const colors = ['#c9a84c', '#dbb960', '#3d6b58', '#2d4a3e', '#c4704b', '#faf8f4'];
+  for (let i = 0; i < 60; i++) {
+    const el = document.createElement('div');
+    const size = Math.random() * 8 + 4;
+    el.style.cssText = `position:fixed;width:${size}px;height:${size}px;background:${colors[Math.floor(Math.random()*colors.length)]};border-radius:${Math.random()>.5?'50%':'2px'};top:-10px;left:${Math.random()*100}%;z-index:10003;pointer-events:none;opacity:${Math.random()*.7+.3}`;
+    container.appendChild(el);
+    const x = (Math.random() - 0.5) * 200;
+    const y = Math.random() * window.innerHeight + 200;
+    const r = Math.random() * 720 - 360;
+    const dur = Math.random() * 1500 + 1500;
+    el.animate([
+      { transform: 'translateY(0) translateX(0) rotate(0deg)', opacity: 1 },
+      { transform: `translateY(${y}px) translateX(${x}px) rotate(${r}deg)`, opacity: 0 }
+    ], { duration: dur, easing: 'cubic-bezier(.25,.46,.45,.94)' }).onfinish = () => el.remove();
+  }
+}
+</script>
+</body>
+</html>
